@@ -1,0 +1,73 @@
+<!-- TODO:GIVEN a weather dashboard with form inputs -->
+<!-- TODO:THEN I am presented with current and future conditions for that city and that city is added to the search history -->
+<!-- TODO:WHEN I search for a city -->
+<!-- TODO:WHEN I view current weather conditions for that city -->
+<!-- TODO:THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index -->
+<!-- TODO:WHEN I view the UV index -->
+<!-- TODO:THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe -->
+<!-- TODO:WHEN I view future weather conditions for that city -->
+<!-- TODO:THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity -->
+<!-- TODO:WHEN I click on a city in the search history -->
+<!-- TODO:THEN I am again presented with current and future conditions for that city -->
+<!-- TODO:WHEN I open the weather dashboard -->
+<!-- TODO:THEN I am presented with the last searched city forecast -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboad</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div class="container col-sm-12">
+        <div class="row">
+            <section id="col-sm-3 search">
+                <h4>Search for a City:</h4>
+                <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+                    <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                      aria-label="Search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                  </form>              
+
+            </section>
+
+            <section id="col-sm-9 currentCity">
+                <div class="row">
+                
+               
+                <div class="card mb-3" >
+                    <!-- TODO: dynamically update city data -->
+                    <div class="card-header">CITY NAME (DATE)</div>
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Light card title</h5> -->
+                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     -->
+                     <p>Temperature: </p>
+                     <p>Humidity: </p>
+                     <p>Wind Speed: </p>
+                     <p>UV Index: </p>
+                     
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <!-- <section id="forecast"> -->
+                      <h3>5-Day Forecast:</h3>
+      
+                    <!-- </section> -->
+                  </div>
+
+            </section>
+        </div>
+    </div>
+    
+</body>
+</html>
