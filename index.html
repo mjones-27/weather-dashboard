@@ -1,4 +1,4 @@
-<!-- TODO:GIVEN a weather dashboard with form inputs -->
+<̶!̶-̶-̶ T̶O̶D̶O̶:̶G̶I̶V̶E̶N̶ a̶ w̶e̶a̶t̶h̶e̶r̶ d̶a̶s̶h̶b̶o̶a̶r̶d̶ w̶i̶t̶h̶ f̶o̶r̶m̶ i̶n̶p̶u̶t̶s̶ -̶-̶>̶
 <!-- TODO:THEN I am presented with current and future conditions for that city and that city is added to the search history -->
 <!-- TODO:WHEN I search for a city -->
 <!-- TODO:WHEN I view current weather conditions for that city -->
@@ -18,7 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboad</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,9 +26,9 @@
         <h1>Weather Dashboard</h1>
     </header>
 
-    <div class="container col-sm-12">
+    <div class="container col-12">
         <div class="row">
-            <section id="col-sm-3 search">
+            <!-- <section id="col-3 search">
                 <h4>Search for a City:</h4>
                 <form class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
                     <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
@@ -36,38 +36,125 @@
                     <i class="fas fa-search" aria-hidden="true"></i>
                   </form>              
 
-            </section>
+            </section> -->
+            <!-- <div class="input-group p-md-4 p-1">
+              <input id="city_input" class="form-control" type="text" placeholder="Enter city name">
+              <span class="input-group-btn">
+                  <button type="button" id="search_button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+              </span>
+            </div> -->
+            
+            <div class="col-sm-4 col-lg-3 bg-light">
+              <div class="input-group p-md-4 p-1">
+                  <input id="city_input" class="form-control" type="text" placeholder="Enter city name">
+                  <span class="input-group-btn">
+                      <button type="button" id="search_button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  </span>
+              </div>  
+              <div class="card m-md-4 m-1">
+                  <ul class="list-group list-group-flush" id="saved_search">
+                    <!-- <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li> -->
+                  </ul>
+              </div>
+          </div>
 
-            <section id="col-sm-9 currentCity">
+          <div class="col-sm-8 col-lg-9">
+            <div class="m-md-4 m-1">
+                <div class="container border rounded p-3">
+                    <h2 id="city_name">...</h2>
+                    <p class="mt-4" id="temp">Temperature: </p>
+                    <p class="mt-4" id="hum">Humidity: </p>
+                    <p class="mt-4" id="wind">Wind speed: </p>
+                    <div class="mt-4">UV Index: 
+                        <span id="uvi" class="badge badge-pill"></span>
+                    </div>
+                </div>
+                <div class="flex mt-4">
+                    <h2>5-day Forecast:</h2>
+                    <div class="mt-4 forecasts">
+                        <div class="card bg-primary p-2 text-white forecast_card" id="forecast_1">
+                            <h4 class="f_city_name">...</h4>
+                            <div class="f_image">
+                                
+                            </div>
+                            <h5 class="f_temp">Temp: ...</h4>
+                            <h5 class="f_hum">Humidity: ...</h4>
+                        </div>
+                        <div class="card bg-primary p-2 text-white forecast_card" id="forecast_2">
+                            <h4 class="f_city_name">...</h4>
+                            <div class="f_image">
+                                
+                            </div>
+                            <h5 class="f_temp">Temp: ...</h4>
+                            <h5 class="f_hum">Humidity: ...</h4>
+                        </div>
+                        <div class="card bg-primary p-2 text-white forecast_card" id="forecast_3">
+                            <h4 class="f_city_name">...</h4>
+                            <div class="f_image">
+                                
+                            </div>
+                            <h5 class="f_temp">Temp: ...</h4>
+                            <h5 class="f_hum">Humidity: ...</h4>
+                        </div>
+                        <div class="card bg-primary p-2 text-white forecast_card" id="forecast_4">
+                            <h4 class="f_city_name">...</h4>
+                            <div class="f_image">
+                                
+                            </div>
+                            <h5 class="f_temp">Temp: ...</h4>
+                            <h5 class="f_hum">Humidity: ...</h4>
+                        </div>
+                        <div class="card bg-primary p-2 text-white forecast_card" id="forecast_5">
+                            <h4 class="f_city_name">...</h4>
+                            <div class="f_image">
+                                
+                            </div>
+                            <h5 class="f_temp">Temp: ...</h4>
+                            <h5 class="f_hum">Humidity: ...</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<!-- 
+            <section id="col-9 currentCity">
                 <div class="row">
                 
                
-                <div class="card mb-3" >
-                    <!-- TODO: dynamically update city data -->
-                    <div class="card-header">CITY NAME (DATE)</div>
-                    <div class="card-body">
-                      <!-- <h5 class="card-title">Light card title</h5> -->
-                      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                     -->
-                     <p>Temperature: </p>
-                     <p>Humidity: </p>
-                     <p>Wind Speed: </p>
-                     <p>UV Index: </p>
-                     
-                    </div>
+                  <div class="card mb-3" >
+                      TODO: dynamically update city data
+                      <div class="card-header">CITY NAME (DATE)</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Light card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the   bulk   of the card's content.</p>
+                        
+                         <p>Temperature: cvdsoicaslnlcaslcoansnconasdncsadcnsdncvsdl.n</p>
+                         <p>Humidity: </p>
+                         <p>Wind Speed: </p>
+                         <p>UV Index: </p>                     
+                        </div>
+                      </div>
                   </div>
-                </div>
+
+                <h3>Seattle</h3>
 
                 <div class="row">
-                    <!-- <section id="forecast"> -->
+                    <section id="forecast">
                       <h3>5-Day Forecast:</h3>
       
-                    <!-- </section> -->
+                    </section>
                   </div>
 
-            </section>
+            </section> -->
+
         </div>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
 </body>
 </html>
